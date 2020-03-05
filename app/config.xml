@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="gb18030"?>
+<root>
+<app>
+	<server ip="" port="8080"/>
+</app>
+</root>

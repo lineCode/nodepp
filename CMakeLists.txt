@@ -2,7 +2,7 @@ cmake_minimum_required(VERSION 3.5.1)
 
 project(nodepp)
 
-set(CMAKE_BUILD_TYPE "Release")
+#set(CMAKE_BUILD_TYPE "Release")
 set(CXX_FLAGS
 		-Wall
 		-Werror
@@ -23,6 +23,10 @@ if (Boost_FOUND)
 	include_directories(${Boost_INCLUDE_DIRS})
 endif()
 
+add_subdirectory(3rd/tinyxml2)
 add_subdirectory(node)
+add_subdirectory(shared)
+add_subdirectory(game)
+
 add_subdirectory(app)
 add_subdirectory(echo)

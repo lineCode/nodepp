@@ -39,6 +39,9 @@ namespace node {
 		tcp::socket& socket() { return socket_; }
 		io_service& get_io_service() { return socket_.get_io_service(); }
 
+		const std::string get_remote_ip();
+		uint16_t get_remote_port();
+
 		//callback handler
 		std::function<void (tcp_connection_ptr)> connectedHandler;
 		std::function<void (tcp_connection_ptr, std::string&)> msgHandler;

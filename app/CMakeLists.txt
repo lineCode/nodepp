@@ -4,4 +4,10 @@ add_executable(app ${DIR_SRCS})
 
 include_directories(../)
 
-target_link_libraries(app node pthread ${Boost_LIBRARIES})
+include_directories(../game/)
+link_directories(../game/)
+
+include_directories(../shared/)
+link_directories(../shared/)
+
+target_link_libraries(app node pthread ${Boost_LIBRARIES} shared game)

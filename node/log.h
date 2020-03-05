@@ -5,7 +5,7 @@
 namespace node {
 	class logger {
 	public:
-		static void init(const char**);
+		static void init(char**);
 
 		static void log(const char* pattern, ...);
 

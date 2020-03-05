@@ -14,7 +14,7 @@ class app
 		explicit app(io_service_pool& pool);
 		virtual ~app();
 
-		bool run();
+		bool init();
 		void stop();
 
 
@@ -24,6 +24,4 @@ class app
 
 		std::shared_ptr<tcp_server> server_;
 		io_service_pool& pool_;
-
-		void RunWorldThread();
 };

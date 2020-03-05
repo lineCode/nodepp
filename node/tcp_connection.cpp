@@ -148,3 +148,26 @@ void tcp_connection::handle_connect(const boost::system::error_code& error) {
 		handle_error(error, "connect");
 	}
 }
+
+const std::string tcp_connection::get_remote_ip()
+{
+	boost::system::error_code ec;
+	boost::asio::ip::tcp::socket::endpoint_type endpoint = socket_.remote_endpoint(ec);
+	if (ec)
+		return "";
+	else {
+		return endpoint.address().to_string();
+	}
+}
+
+uint16_t tcp_connection::get_remote_port()
+{
+	boost::system::error_code ec;
+	boost::asio::ip::tcp::socket::endpoint_type endpoint = socket_.remote_endpoint(ec);
+	if (ec)
+		return 0;
+	else {
+		return endpoint.port();
+	}
+
+}

@@ -28,7 +28,7 @@ void logger::log(const char* pattern, ...)
 	callback(buff);	
 }
 
-void logger::init(const char**)
+void logger::init(char**)
 {
 	callback = default_log_cb;
 }
